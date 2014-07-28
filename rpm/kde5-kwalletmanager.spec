@@ -82,7 +82,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %doc COPYING COPYING.LIB
-%{_kde5_bindir}/kwalletmanager
+%{_kde5_bindir}/kwalletmanager5
 %{_kde5_sysconfdir}/dbus-1/system.d/org.kde.kcontrol.kcmkwallet.conf
 %{_kde5_plugindir}/kcm_kwallet.so
 %{_kde5_libexecdir}/kcm_kwallet_helper
