@@ -90,6 +90,7 @@ rm -rf %{buildroot}
 %{_datadir}/dbus-1/system-services/org.kde.kcontrol.kcmkwallet.service
 %{_datadir}/doc/HTML/en/kwallet
 %{_datadir}/icons/*
+%{_datadir}/kxmlgui5/*
 %{_kde5_datadir}/kwalletmanager5
 %{_datadir}/kservices5/*
 %{_datadir}/polkit-1/actions/org.kde.kcontrol.kcmkwallet.policy
