@@ -42,7 +42,6 @@ BuildRequires:  kf5-kxmlgui-devel
 BuildRequires:  kf5-kconfig-devel
 BuildRequires:  kf5-kconfigwidgets-devel
 BuildRequires:  kf5-kdbusaddons-devel
-BuildRequires:  desktop-file-utils
 
 
 %description
@@ -74,9 +73,6 @@ rm -rf %{buildroot}
 
 # >> install post
 # << install post
-desktop-file-install --delete-original       \
-  --dir %{buildroot}%{_datadir}/applications             \
-   %{buildroot}%{_datadir}/applications/*.desktop
 
 
 
@@ -90,14 +86,12 @@ desktop-file-install --delete-original       \
 %{_kde5_sysconfdir}/dbus-1/system.d/org.kde.kcontrol.kcmkwallet.conf
 %{_kde5_plugindir}/kcm_kwallet.so
 %{_kde5_libexecdir}/kcm_kwallet_helper
-%{_datadir}/applications/kwalletmanager-kwalletd.desktop
-%{_datadir}/applications/kwalletmanager.desktop
+%{_datadir}/applications/*
 %{_datadir}/dbus-1/system-services/org.kde.kcontrol.kcmkwallet.service
 %{_datadir}/doc/HTML/en/kwallet
-%{_datadir}/icons/*/*/*/*.png
-%{_kde5_datadir}/kwalletmanager
-%{_datadir}/kservices5/kwalletconfig.desktop
-%{_datadir}/kservices5/kwalletmanager_show.desktop
+%{_datadir}/icons/*
+%{_kde5_datadir}/kwalletmanager5
+%{_datadir}/kservices5/*
 %{_datadir}/polkit-1/actions/org.kde.kcontrol.kcmkwallet.policy
 # >> files
 # << files
