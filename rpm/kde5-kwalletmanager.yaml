@@ -1,0 +1,72 @@
+Name         : kde5-kwalletmanager
+Version      : 5.0.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : KDE Wallet Manager is a tool to manage the passwords on your Plasma system.
+Description  : |
+  KDE Wallet Manager is a tool to manage the passwords on your Plasma system.
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kde5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - kf5-kcoreaddons-devel
+    - kf5-kdoctools-devel
+    - kf5-kauth-devel
+    - kf5-kwallet-devel
+    - kf5-kservice-devel
+    - kf5-kcmutils-devel
+    - kf5-kdelibs4support-devel
+    - kf5-ki18n-devel
+    - kf5-kxmlgui-devel
+    - kf5-kconfig-devel
+    - kf5-kconfigwidgets-devel
+    - kf5-kdbusaddons-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - Qt5PrintSupport
+Requires:
+    - kde5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING COPYING.LIB"
+    - "%{_kde5_bindir}/kwalletmanager"
+    - "%{_kde5_sysconfdir}/dbus-1/system.d/org.kde.kcontrol.kcmkwallet.conf"
+    - "%{_kde5_plugindir}/kcm_kwallet.so"
+    - "%{_kde5_libexecdir}/kcm_kwallet_helper"
+    - "%{_datadir}/applications/kwalletmanager-kwalletd.desktop"
+    - "%{_datadir}/applications/kwalletmanager.desktop"
+    - "%{_datadir}/dbus-1/system-services/org.kde.kcontrol.kcmkwallet.service"
+    - "%{_datadir}/doc/HTML/en/kwallet"
+    - "%{_datadir}/icons/*/*/*/*.png"
+    - "%{_kde5_datadir}/kwalletmanager"
+    - "%{_datadir}/kservices5/kwalletconfig.desktop"
+    - "%{_datadir}/kservices5/kwalletmanager_show.desktop"
+    - "%{_datadir}/polkit-1/actions/org.kde.kcontrol.kcmkwallet.policy"
