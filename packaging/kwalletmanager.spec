@@ -50,7 +50,7 @@ KDE Wallet Manager is a tool to manage the passwords on your Plasma system.
 
 
 %prep
-%setup -q -n %{name}-%{version}/upstream
+%setup -q -n %{name}-%{version}
 
 # >> setup
 # << setup
